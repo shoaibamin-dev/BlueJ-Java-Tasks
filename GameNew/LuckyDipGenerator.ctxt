@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=LuckyDipGenerator
+comment0.text=\r\n\ LuckyDipGenerator\ class\ generates,\ guess\ and\ shows\ the\ lucky\ number.\r\n
+comment1.params=
+comment1.target=void\ setLuckyNumber()
+comment2.params=number
+comment2.target=int\ guessLuckyNumber(int)
+comment3.params=
+comment3.target=int\ getLuckyNumber()
+comment4.params=guess
+comment4.target=java.lang.Boolean\ winWithInMargin(int)
+numComments=5

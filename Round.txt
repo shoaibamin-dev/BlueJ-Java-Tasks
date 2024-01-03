@@ -1,0 +1,22 @@
+
+
+public class Round{
+    private String result;
+    private int amount;
+    
+    public Round(String _result, int _amount){
+        this.result = _result;
+        this.amount = _amount;
+    }
+    
+    public String getResult(){
+        return this.result;
+    }
+    
+    public int getAmount(){
+        return this.amount;
+    }
+    
+    
+    
+}

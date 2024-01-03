@@ -1,0 +1,38 @@
+import java.util.concurrent.ThreadLocalRandom;
+
+
+public class LuckyDipGenerator
+{
+   
+   private int luckyNumber = 0;
+   
+   public void setLuckyNumber(){
+        this.luckyNumber = ThreadLocalRandom.current().nextInt(1, 51);
+       
+   }
+   
+   public int guessLuckyNumber(int number){
+       if(number == luckyNumber){
+            return 0;
+        } 
+       else if(number > luckyNumber){
+            return 1;
+        } 
+       else {
+            return -1;
+        }
+    
+   }
+   
+   public int getLuckyNumber(){
+        return this.luckyNumber;
+    }
+    
+   public Boolean winWithInMargin(int guess){
+        if(guess <= (this.luckyNumber + 5) && guess >= (this.luckyNumber - 5)){
+            return true;
+        }
+        return false;
+    }
+    
+}

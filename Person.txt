@@ -1,0 +1,103 @@
+import java.util.ArrayList;
+
+
+public class Person
+{
+    private String name = "";
+    private int initialCredit, credit, wins, losses, winnings;
+    private ArrayList<Round> history = new ArrayList<Round>();
+    public void initiate(String _name){
+        this.name = _name;
+        this.credit=0;
+        this.initialCredit=0;
+        this.wins=0;
+        this.losses=0;
+        this.winnings=0;
+        history = new ArrayList<Round>();
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public Boolean nameExists(){
+        if(name.equals("")){
+            return false;
+        }
+        return true;
+    }
+    
+    public void setCredit(int _credit){
+        if(this.credit > 0){
+            this.credit += _credit;
+            this.initialCredit += _credit;
+        }
+        else{
+            this.credit = _credit;
+            this.initialCredit = this.credit;
+        }
+    }
+    
+    public void addCredit(int _credit){
+        if((this.credit + _credit)<0){
+            this.credit = 0;
+        }
+        else{
+            this.credit += _credit;
+        }
+    }
+    
+    public int getCredit(){
+        return this.credit;
+    }
+    
+    public void incrementWins(int _winAmount){
+        this.wins+=1;
+        history.add(new Round("Win", _winAmount));
+        
+    }
+    
+    public void incrementLosses(){
+        this.losses+=1;
+        if((this.credit - 5)<0){
+            history.add(new Round("Loss", this.credit));
+        }
+        else{
+            history.add(new Round("Loss", -5));
+        }
+        
+    }
+    
+     public void displayStastics(){
+        int totalRounds = this.wins+this.losses;
+        System.out.println("Player's Name : "+this.name);
+        System.out.println("Rounds You Played : "+totalRounds);
+        System.out.println("Total Rounds Won : "+(this.wins));
+        System.out.println("Total Rounds Lost : "+(this.losses));
+        if(totalRounds==0){
+            System.out.println("Overall Winning Ratio : 0.00");
+        }
+        else{
+            System.out.println("Overall Winning Ratio : "+(Math.round((1.0 * this.wins) / totalRounds * 100.0)/100.0));    
+        }
+        System.out.println("Your Current Balance : $"+(this.initialCredit));
+        System.out.println("Your Winnings/Losses : "+(this.credit-this.initialCredit)+"$");
+        System.out.println("Your Final Balance : $"+(this.credit));
+        
+        if(history.size() != 0){
+            System.out.println("\n--> HISTORY <--");
+            for(int i = 0; i<history.size(); i++){
+                Round round = history.get(i);
+                System.out.println("Round "+(i+1)+". Result : "+round.getResult()+". Amount Won/Lost: "+round.getAmount()+"$.");
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+}

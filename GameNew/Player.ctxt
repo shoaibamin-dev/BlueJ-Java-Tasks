@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=_name
+comment1.target=void\ initiate(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=java.lang.Boolean\ nameExists()
+comment4.params=_credit
+comment4.target=void\ setCredit(int)
+comment5.params=_credit
+comment5.target=void\ addCredit(int)
+comment6.params=
+comment6.target=int\ getCredit()
+comment7.params=_winAmount
+comment7.target=void\ incrementWins(int)
+comment8.params=
+comment8.target=void\ incrementLosses()
+comment9.params=
+comment9.target=void\ displayStastics()
+numComments=10

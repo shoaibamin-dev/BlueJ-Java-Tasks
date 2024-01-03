@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=AverageNum
+comment0.text=\r\n\ AverageNum\ class\ that\ calculates\ the\ average\ number\ from\ the\ list\ of\ numbers.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=list
+comment2.target=void\ calculateAverage(double[])
+comment2.text=\r\n\ Method\ for\ calculating\ the\ average\ of\ the\ monthly\ rainfall\ array.\r\n
+numComments=3
